@@ -21,15 +21,15 @@ class Influencer {
     }
 }
 
-// Datenbankverbindung herstellen
+
 $mysqli = new mysqli("localhost", "root", "", "demo2");
 
-// Verbindung überprüfen
+
 if ($mysqli->connect_error) {
     die("Connection Error: " . $mysqli->connect_error);
 }
 
-$sql = "SELECT full_name, followers_count, location FROM mock_data LIMIT 30";
+$sql = "SELECT full_name, followers_count, location FROM mock_data LIMIT 3";
 $result = $mysqli->query($sql);
 
 if ($result->num_rows > 0) {
@@ -42,5 +42,3 @@ if ($result->num_rows > 0) {
 } else {
     echo "No data found.";
 }
-
-
