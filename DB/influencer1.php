@@ -1,8 +1,7 @@
 <?php
 
 class Influencer {
-
-
+    public $mysqli;
     function __construct(){
         $this->mysqli = new mysqli("localhost", "root", "", "demo2");
 

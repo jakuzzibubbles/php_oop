@@ -18,7 +18,7 @@ if ($conn->connect_error){
 }
 
 
-$sql = "SELECT habitat, rarity_level FROM mock_data";
+$sql = "SELECT habitat, rarity_level FROM mock_data LIMIT 6";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0){
