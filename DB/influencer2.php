@@ -12,6 +12,11 @@ class Influencer {
         if($this->mysqli->connect_error){
             die("Connection Error");
         }
+
+    }
+
+    function getConnection(){
+        return $this->mysqli;
     }
 
     function select($full_name, $followers_count, $location) {
@@ -21,15 +26,10 @@ class Influencer {
     }
 }
 
+$mysqli = new Influencer();
+$mysqli = $mysqli->getConnection();
 
-$mysqli = new mysqli("localhost", "root", "", "demo2");
-
-
-if ($mysqli->connect_error) {
-    die("Connection Error: " . $mysqli->connect_error);
-}
-
-$sql = "SELECT full_name, followers_count, location FROM mock_data LIMIT 3";
+$sql = "SELECT full_name, followers_count, location FROM mock_data LIMIT 33";
 $result = $mysqli->query($sql);
 
 if ($result->num_rows > 0) {

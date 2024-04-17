@@ -38,5 +38,4 @@ if ($result->num_rows > 0) {
     echo "Keine Daten gefunden.";
 }
 
-$conn->close();
 

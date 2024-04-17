@@ -12,10 +12,7 @@ class Influencer {
     }
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "demo2";
+include("config.php");
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -25,7 +22,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT full_name, followers_count, location FROM mock_data LIMIT 30";
+$sql = "SELECT full_name, followers_count, location FROM mock_data LIMIT 23";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -37,6 +34,3 @@ if ($result->num_rows > 0) {
 } else {
     echo "No data found.";
 }
-
-$conn->close();
-
